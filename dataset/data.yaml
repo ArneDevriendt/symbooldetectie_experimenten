@@ -1,0 +1,11 @@
+path: C:/Users/arne.devriendt/symbooldetectie_experimenten/dataset
+train: images/train
+val: images/val
+names:
+  0: Silo
+  1: Klep
+  2: Ketting
+  3: Klepkast
+  4: Lift
+
+

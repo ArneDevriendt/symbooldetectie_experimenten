@@ -8,6 +8,7 @@ Elk programma is één .py-bestand en deelt niets met de andere.
 | 1 | `1_template_matching_simpel.py` | Template matching, één schaal, geen nabewerking |
 | 2 | `2_template_matching_verbeterd.py` | Zelfde + multi-schaal, verwijderen van omvattende boxen, NMS |
 | 3 | `3_feature_matching_simpel.py` | SIFT + afstandstolerantie + RANSAC, vindt alle exemplaren |
+| 3b | `3b_feature_matching_verbeterd.py` | Zelfde + opschalen, gevoeligere SIFT, schaalfilter, een-op-een matching, NMS |
 | 4 | `4_yolo_trainen.py` | YOLOv8 trainen (CPU of GPU), toont mAP op het einde |
 | 5 | `5_yolo_testen.py` | Getraind YOLOv8-model toepassen op schema's |
 
@@ -35,8 +36,13 @@ python 2_template_matching_verbeterd.py schemas\schema1.png --symbolen symbolen_
 python 3_feature_matching_simpel.py schemas\schema1.png --symbolen symbolen_set1
 ```
 
-Opties: `--drempel` (1 en 2, standaard 0.6), `--min-matches` (3, standaard 10), `--uit` (uitvoermap).
+```powershell
+python 3b_feature_matching_verbeterd.py schemas\schema1.png --symbolen symbolen_set1
+```
+
+Opties: `--drempel` (1 en 2, standaard 0.6), `--min-matches` (3 en 3b, standaard 10), `--uit` (uitvoermap).
 Programma 2 heeft `--geen-schalen`, `--geen-omvattend`, `--geen-nms` en `--nms-iou`.
+Programma 3b heeft `--geen-opschalen`, `--geen-gevoelig`, `--geen-schaalfilter`, `--geen-een-op-een`, `--geen-nms` en `--nms-iou`.
 
 ## Programma 4 – trainen
 
